@@ -1,0 +1,13 @@
+boolean portaAberta
+boolean ligado
+int minutos
+int segundos
+
+function temporizador 
+function ligarMicroondas (só pode ser ligado se a porta estiver fechada)
+dunction abrirPorta
+function interromperTemporizador
+function potencia
+
+
+Restrições 

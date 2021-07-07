@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\temp\\junit-platform-console-standalone-1.8.0-M1.jar",
+        "c:\\Users\\Cabongue\\Desktop\\POO_TestData\\src\\Data.jar",
+        "g:\\PUC\\Aulas\\POO_20\\Java\\POO_TestData\\src\\Data.jar"
+    ]
+}
