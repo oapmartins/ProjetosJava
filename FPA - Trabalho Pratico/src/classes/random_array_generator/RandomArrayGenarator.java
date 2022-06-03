@@ -11,7 +11,6 @@ public class RandomArrayGenarator {
 
         for (int i = 0; i < randomArray.length; i++) {
             randomArray[i] = random.nextInt(arraySize);
-            System.out.println(randomArray[i]); 
         }
         return randomArray;
     }
