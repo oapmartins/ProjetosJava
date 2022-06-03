@@ -1,18 +1,31 @@
 import classes.random_array_generator.RandomArrayGenarator;
-import classes.sort_algorithm.Heapsort;
+import classes.sort_algorithm.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
         RandomArrayGenarator classArrayGenerator = new RandomArrayGenarator();       
-        int[] randomArray = classArrayGenerator.generateRandomArray(100);
+        int[] randomArray = classArrayGenerator.generateRandomArray(10);
 
-        Heapsort heap = new Heapsort();
-        heap.sort(randomArray);
+        System.out.println("Array desordenada");
+        for(int i : randomArray){
+            System.out.println(randomArray[i]);
+        }
+
+        // Clonar os arrays pra enviar cada um separado pros métodos de ordenação array.clone()
+
+        // Heapsort
+        // Heapsort heap = new Heapsort();
+        // heap.sort(randomArray);
+
+        // InsertionSort
+        InsertionSort insertion = new InsertionSort();
+        insertion.sort(randomArray);
         
         // int[] teste2 = teste.clone();
         System.out.println("teste");
 
+        System.out.println("\nArray ordenada");
         for(int i : randomArray){
             System.out.println(randomArray[i]);
         }
