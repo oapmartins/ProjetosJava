@@ -1,15 +1,15 @@
-import classes.random_array_generator.RandomArrayGenarator;
+import classes.random_array_generator.RandomArrayGenerator;
 import classes.sort_algorithm.*;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception{
 
-        RandomArrayGenarator classArrayGenerator = new RandomArrayGenarator();       
+        RandomArrayGenerator classArrayGenerator = new RandomArrayGenerator();
         int[] randomArray = classArrayGenerator.generateRandomArray(10);
 
         System.out.println("Array desordenada");
         for(int i : randomArray){
-            System.out.println(randomArray[i]);
+            System.out.println(i);
         }
 
         // Clonar os arrays pra enviar cada um separado pros métodos de ordenação array.clone()
@@ -27,7 +27,7 @@ public class App {
 
         System.out.println("\nArray ordenada");
         for(int i : randomArray){
-            System.out.println(randomArray[i]);
+            System.out.println(i);
         }
     }
 }
