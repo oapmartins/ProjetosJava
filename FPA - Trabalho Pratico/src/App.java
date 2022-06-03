@@ -1,6 +1,14 @@
+import classes.random_array_generator.RandomArrayGenarator;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+
+        RandomArrayGenarator classArrayGenerator = new RandomArrayGenarator();       
+        int[] randomArray = classArrayGenerator.generateRandomArray(600);
+
+        
+        // int[] teste2 = teste.clone();
+        System.out.println("teste");
     }
 }
 
