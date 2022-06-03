@@ -1,14 +1,21 @@
 import classes.random_array_generator.RandomArrayGenarator;
+import classes.sort_algorithm.Heapsort;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
         RandomArrayGenarator classArrayGenerator = new RandomArrayGenarator();       
-        int[] randomArray = classArrayGenerator.generateRandomArray(600);
+        int[] randomArray = classArrayGenerator.generateRandomArray(100);
 
+        Heapsort heap = new Heapsort();
+        heap.sort(randomArray);
         
         // int[] teste2 = teste.clone();
         System.out.println("teste");
+
+        for(int i : randomArray){
+            System.out.println(randomArray[i]);
+        }
     }
 }
 
