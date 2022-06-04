@@ -19,11 +19,18 @@ public class App {
         // heap.sort(randomArray);
 
         // InsertionSort
-        InsertionSort insertion = new InsertionSort();
-        insertion.sort(randomArray);
-        
+//        InsertionSort insertion = new InsertionSort();
+//        insertion.sort(randomArray);
+
+        // Quicksort
+//        Quicksort quick = new Quicksort();
+//        quick.sort(randomArray, 0, randomArray.length-1);
+
+        // Selectionsort
+        SelectionSort selection = new SelectionSort();
+        selection.sort(randomArray);
+
         // int[] teste2 = teste.clone();
-        System.out.println("teste");
 
         System.out.println("\nArray ordenada");
         for(int i : randomArray){
