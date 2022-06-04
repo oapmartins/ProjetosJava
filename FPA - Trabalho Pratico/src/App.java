@@ -16,19 +16,27 @@ public class App {
 
         // Heapsort
         // Heapsort heap = new Heapsort();
+        // long start = System.currentTimeMillis();
         // heap.sort(randomArray);
+        // long stop = System.currentTimeMillis();
 
         // InsertionSort
 //        InsertionSort insertion = new InsertionSort();
+//        long start = System.currentTimeMillis();
 //        insertion.sort(randomArray);
+//        long stop = System.currentTimeMillis();
 
         // Quicksort
 //        Quicksort quick = new Quicksort();
+//        long start = System.currentTimeMillis();
 //        quick.sort(randomArray, 0, randomArray.length-1);
+//        long stop = System.currentTimeMillis();
 
         // Selectionsort
-        SelectionSort selection = new SelectionSort();
-        selection.sort(randomArray);
+//        SelectionSort selection = new SelectionSort();
+//        long start = System.currentTimeMillis();
+//        selection.sort(randomArray);
+//        long stop = System.currentTimeMillis();
 
         // int[] teste2 = teste.clone();
 
