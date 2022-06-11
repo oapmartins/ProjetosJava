@@ -2,7 +2,7 @@ package classes.sort_algorithm;
 
 public class InsertionSort {
     
-    public void sort(int[] vetor){
+    public int[] sort(int[] vetor){
         for (int i = 1; i < vetor.length; i++){
 			
 			int aux = vetor[i];
@@ -15,5 +15,6 @@ public class InsertionSort {
 			vetor[j] = aux;
 
 		}
+		return vetor;
     }
 }

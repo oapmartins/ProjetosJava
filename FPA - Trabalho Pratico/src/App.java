@@ -1,60 +1,88 @@
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 import classes.random_array_generator.RandomArrayGenerator;
 import classes.sort_algorithm.*;
 
 public class App {
-    public static void main(String[] args) throws Exception{
 
-        RandomArrayGenerator classArrayGenerator = new RandomArrayGenerator();
-        int[] randomArray = classArrayGenerator.generateRandomArray(10);
+        static Scanner read = new Scanner(System.in);
 
-        System.out.println("Array desordenada");
-        for(int i : randomArray){
-            System.out.println(i);
+        public static void main(String[] args) throws Exception {
+
+                // Pegar informações do sistema.
+                System.out.println("Digite o tamanho para ser gerado o array aleatório: ");
+                int sizeArray = read.nextInt();
+
+                // Gera array com numeros aleatorios.
+                RandomArrayGenerator classArrayGenerator = new RandomArrayGenerator();
+                int[] randomArray = classArrayGenerator.generateRandomArray(sizeArray);
+
+                // Exibe o menu de opções.
+                showMenuOption(randomArray);
+                read.close();
         }
 
-        // Clonar os arrays pra enviar cada um separado pros métodos de ordenação array.clone()
+        public static void showMenuOption(int[] randomArray) {
+                System.out.println(
+                                "\nOpções: \n 1 - Imprimir array desordenado \n 2 - Utilizar algorítmos para ordenar");
+                int choseOption = read.nextInt();
 
-        // Heapsort
-        // Heapsort heap = new Heapsort();
-        // long start = System.currentTimeMillis();
-        // heap.sort(randomArray);
-        // long stop = System.currentTimeMillis();
+                switch (choseOption) {
+                        case 1:
+                                System.out.println("\nArray desordenada");
+                                for (int i : randomArray) {
+                                        System.out.println(i);
+                                }
+                                showMenuOption(randomArray);
+                                break;
+                        case 2:
+                                sortAlgorithm(randomArray);
+                                break;
 
-        // InsertionSort
-//        InsertionSort insertion = new InsertionSort();
-//        long start = System.currentTimeMillis();
-//        insertion.sort(randomArray);
-//        long stop = System.currentTimeMillis();
-
-        // Quicksort
-//        Quicksort quick = new Quicksort();
-//        long start = System.currentTimeMillis();
-//        quick.sort(randomArray, 0, randomArray.length-1);
-//        long stop = System.currentTimeMillis();
-
-        // Selectionsort
-//        SelectionSort selection = new SelectionSort();
-//        long start = System.currentTimeMillis();
-//        selection.sort(randomArray);
-//        long stop = System.currentTimeMillis();
-
-        // int[] teste2 = teste.clone();
-
-        System.out.println("\nArray ordenada");
-        for(int i : randomArray){
-            System.out.println(i);
+                        default:
+                                System.out.println("Opção não encontrada!");
+                                break;
+                }
         }
-    }
+
+        public static void sortAlgorithm(int[] randomArray) {
+
+                // Selectionsort
+                SelectionSort selection = new SelectionSort();
+                long startTimeSelectionSort = System.currentTimeMillis();
+                selection.sort(randomArray.clone());
+                long stopTimeSelectionSort = System.currentTimeMillis();
+
+                long secondsSelectionSort = TimeUnit.MILLISECONDS
+                                .toSeconds(stopTimeSelectionSort - startTimeSelectionSort);
+                System.out.println("\nTempo gasto SELECTIONSORT: " + secondsSelectionSort + " segundo(s)");
+
+                // InsertionSort
+                InsertionSort insertion = new InsertionSort();
+                long startTimeInsertionSort = System.currentTimeMillis();
+                insertion.sort(randomArray.clone());
+                long stopTimeInsertionSort = System.currentTimeMillis();
+
+                long secondsInsertion = TimeUnit.MILLISECONDS.toSeconds(stopTimeInsertionSort - startTimeInsertionSort);
+                System.out.println("Tempo gasto INSERTIONSORT: " + secondsInsertion + " segundo(s)");
+
+                // Quicksort
+                Quicksort quick = new Quicksort();
+                long startTimeQuicksort = System.currentTimeMillis();
+                quick.sort(randomArray.clone(), 0, randomArray.length - 1);
+                long stopTimeQuicksort = System.currentTimeMillis();
+
+                long secondsQuickSort = TimeUnit.MILLISECONDS.toSeconds(stopTimeQuicksort - startTimeQuicksort);
+                System.out.println("Tempo gasto QUICKSORT: " + secondsQuickSort + " segundo(s)");
+
+                // Heapsort
+                Heapsort heap = new Heapsort();
+                long startTimeHeapsort = System.currentTimeMillis();
+                heap.sort(randomArray.clone());
+                long stopTimeHeapsort = System.currentTimeMillis();
+
+                long secondsHeapsort = TimeUnit.MILLISECONDS.toSeconds(stopTimeHeapsort - startTimeHeapsort);
+                System.out.println("Tempo gasto HEAPSORT: " + secondsHeapsort + " segundo(s)\n");
+        }
 }
-
-// Criar gerador de array de números aleatorios;
-
-// Imprimir chave não ordenada se o usuário quiser;
-
-// Imprimir as chaves ordenadas, se o usuário desejar; 
-
-// Metodo para ordenar Seleção, Inserção, Quicksort, Heapsort;
-
-// Criar um jeito de contar o tempo de processamento de cada algorítmo
-
-// Contador dentro dos algorítmos, para pegar o número de comparações e de execução

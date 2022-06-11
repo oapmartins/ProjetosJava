@@ -2,7 +2,7 @@ package classes.sort_algorithm;
 
 public class Heapsort {
 
-      public void sort(int arr[]) {
+      public int[] sort(int arr[]) {
           int n = arr.length;
       
           // Build max heap
@@ -19,6 +19,7 @@ public class Heapsort {
             // Heapify root element
             heapify(arr, i, 0);
           }
+          return arr;
         }
       
         private void heapify(int arr[], int n, int i) {

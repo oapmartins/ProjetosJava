@@ -1,12 +1,13 @@
 package classes.sort_algorithm;
 
 public class Quicksort {
-    public void sort(int[] vetor, int inicio, int fim) {
+    public int[] sort(int[] vetor, int inicio, int fim) {
         if (inicio < fim) {
             int posicaoPivo = separar(vetor, inicio, fim);
             sort(vetor, inicio, posicaoPivo - 1);
             sort(vetor, posicaoPivo + 1, fim);
         }
+        return vetor;
     }
 
     private int separar(int[] vetor, int inicio, int fim) {

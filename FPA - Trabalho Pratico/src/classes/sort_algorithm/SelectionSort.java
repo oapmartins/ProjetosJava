@@ -1,7 +1,7 @@
 package classes.sort_algorithm;
 
 public class SelectionSort {
-    public void sort(int[] array){
+    public int[] sort(int[] array){
         for (int fixo = 0; fixo < array.length - 1; fixo++) {
             int menor = fixo;
 
@@ -16,5 +16,6 @@ public class SelectionSort {
                 array[menor] = t;
             }
         }
+        return array;
     }
 }
