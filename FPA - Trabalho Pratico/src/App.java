@@ -55,8 +55,8 @@ public class App {
                 long stopTimeSelectionSort = System.currentTimeMillis();
 
                 long secondsSelectionSort = TimeUnit.MILLISECONDS
-                                .toSeconds(stopTimeSelectionSort - startTimeSelectionSort);
-                System.out.println("\nTempo gasto SELECTIONSORT: " + secondsSelectionSort + " segundo(s)");
+                                .toMillis(stopTimeSelectionSort - startTimeSelectionSort);
+                System.out.println("\nTempo gasto SELECTIONSORT: " + secondsSelectionSort + " milissegundo(s)");
 
                 // InsertionSort
                 InsertionSort insertion = new InsertionSort();
@@ -64,8 +64,8 @@ public class App {
                 insertion.sort(randomArray.clone());
                 long stopTimeInsertionSort = System.currentTimeMillis();
 
-                long secondsInsertion = TimeUnit.MILLISECONDS.toSeconds(stopTimeInsertionSort - startTimeInsertionSort);
-                System.out.println("Tempo gasto INSERTIONSORT: " + secondsInsertion + " segundo(s)");
+                long secondsInsertion = TimeUnit.MILLISECONDS.toMillis(stopTimeInsertionSort - startTimeInsertionSort);
+                System.out.println("Tempo gasto INSERTIONSORT: " + secondsInsertion + " milissegundo(s)");
 
                 // Quicksort
                 Quicksort quick = new Quicksort();
@@ -73,8 +73,8 @@ public class App {
                 quick.sort(randomArray.clone(), 0, randomArray.length - 1);
                 long stopTimeQuicksort = System.currentTimeMillis();
 
-                long secondsQuickSort = TimeUnit.MILLISECONDS.toSeconds(stopTimeQuicksort - startTimeQuicksort);
-                System.out.println("Tempo gasto QUICKSORT: " + secondsQuickSort + " segundo(s)");
+                long secondsQuickSort = TimeUnit.MILLISECONDS.toMillis(stopTimeQuicksort - startTimeQuicksort);
+                System.out.println("Tempo gasto QUICKSORT: " + secondsQuickSort + " milissegundo(s)");
 
                 // Heapsort
                 Heapsort heap = new Heapsort();
@@ -82,7 +82,7 @@ public class App {
                 heap.sort(randomArray.clone());
                 long stopTimeHeapsort = System.currentTimeMillis();
 
-                long secondsHeapsort = TimeUnit.MILLISECONDS.toSeconds(stopTimeHeapsort - startTimeHeapsort);
-                System.out.println("Tempo gasto HEAPSORT: " + secondsHeapsort + " segundo(s)\n");
+                long secondsHeapsort = TimeUnit.MILLISECONDS.toMillis(stopTimeHeapsort - startTimeHeapsort);
+                System.out.println("Tempo gasto HEAPSORT: " + secondsHeapsort + " milissegundo(s)\n");
         }
 }
