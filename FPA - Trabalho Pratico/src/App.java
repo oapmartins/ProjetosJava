@@ -49,6 +49,7 @@ public class App {
         public static void sortAlgorithm(int[] randomArray) {
 
                 // Selectionsort
+                System.out.println("-------------------------------------------------------------------------------");
                 SelectionSort selection = new SelectionSort();
                 long startTimeSelectionSort = System.currentTimeMillis();
                 selection.sort(randomArray.clone());
@@ -56,9 +57,12 @@ public class App {
 
                 long secondsSelectionSort = TimeUnit.MILLISECONDS
                                 .toMillis(stopTimeSelectionSort - startTimeSelectionSort);
-                System.out.println("\nTempo gasto SELECTIONSORT: " + secondsSelectionSort + " milissegundo(s)");
+                System.out.println("Tempo gasto SELECTIONSORT: " + secondsSelectionSort + " milissegundo(s) ");
+                selection.showComparations();
+                System.out.println("-------------------------------------------------------------------------------\n");
 
                 // InsertionSort
+                System.out.println("-------------------------------------------------------------------------------");
                 InsertionSort insertion = new InsertionSort();
                 long startTimeInsertionSort = System.currentTimeMillis();
                 insertion.sort(randomArray.clone());
@@ -66,8 +70,11 @@ public class App {
 
                 long secondsInsertion = TimeUnit.MILLISECONDS.toMillis(stopTimeInsertionSort - startTimeInsertionSort);
                 System.out.println("Tempo gasto INSERTIONSORT: " + secondsInsertion + " milissegundo(s)");
+                insertion.showComparations();
+                System.out.println("-------------------------------------------------------------------------------\n");
 
                 // Quicksort
+                System.out.println("-------------------------------------------------------------------------------");
                 Quicksort quick = new Quicksort();
                 long startTimeQuicksort = System.currentTimeMillis();
                 quick.sort(randomArray.clone(), 0, randomArray.length - 1);
@@ -75,14 +82,19 @@ public class App {
 
                 long secondsQuickSort = TimeUnit.MILLISECONDS.toMillis(stopTimeQuicksort - startTimeQuicksort);
                 System.out.println("Tempo gasto QUICKSORT: " + secondsQuickSort + " milissegundo(s)");
+                quick.showComparations();
+                System.out.println("-------------------------------------------------------------------------------\n");
 
                 // Heapsort
+                System.out.println("-------------------------------------------------------------------------------");
                 Heapsort heap = new Heapsort();
                 long startTimeHeapsort = System.currentTimeMillis();
                 heap.sort(randomArray.clone());
                 long stopTimeHeapsort = System.currentTimeMillis();
 
                 long secondsHeapsort = TimeUnit.MILLISECONDS.toMillis(stopTimeHeapsort - startTimeHeapsort);
-                System.out.println("Tempo gasto HEAPSORT: " + secondsHeapsort + " milissegundo(s)\n");
+                System.out.println("Tempo gasto HEAPSORT: " + secondsHeapsort + " milissegundo(s)");
+                heap.showComparations();
+                System.out.println("-------------------------------------------------------------------------------\n");
         }
 }
