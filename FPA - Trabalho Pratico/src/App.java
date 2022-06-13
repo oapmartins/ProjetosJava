@@ -9,24 +9,28 @@ public class App {
         static Scanner read = new Scanner(System.in);
 
         public static void main(String[] args) throws Exception {
+                boolean continuar = true;
 
-                // Pegar informações do sistema.
-                System.out.println("Digite o tamanho para ser gerado o array aleatório: ");
-                int sizeArray = read.nextInt();
+                while (continuar) {
+                        // Pegar informações do sistema.
+                        System.out.println("Digite o tamanho para ser gerado o array aleatório: ");
+                        int sizeArray = read.nextInt();
 
-                // Gera array com numeros aleatorios.
-                RandomArrayGenerator classArrayGenerator = new RandomArrayGenerator();
-                int[] randomArray = classArrayGenerator.generateRandomArray(sizeArray);
+                        // Gera array com numeros aleatorios.
+                        RandomArrayGenerator classArrayGenerator = new RandomArrayGenerator();
+                        int[] randomArray = classArrayGenerator.generateRandomArray(sizeArray);
 
-                // Exibe o menu de opções.
-                showMenuOption(randomArray);
+                        // Exibe o menu de opções.
+                        continuar = showMenuOption(randomArray);
+                }
                 read.close();
         }
 
-        public static void showMenuOption(int[] randomArray) {
+        public static boolean showMenuOption(int[] randomArray) {
                 System.out.println(
-                                "\nOpções: \n 1 - Imprimir array desordenado \n 2 - Utilizar algorítmos para ordenar");
+                                "\nOpções: \n 1 - Imprimir array desordenado \n 2 - Utilizar algorítmos para ordenar \n 3 - Parar");
                 int choseOption = read.nextInt();
+                boolean continuar = true;
 
                 switch (choseOption) {
                         case 1:
@@ -40,10 +44,14 @@ public class App {
                                 sortAlgorithm(randomArray);
                                 break;
 
+                        case 3:
+                                System.out.println("Parou");
+                                break;
                         default:
                                 System.out.println("Opção não encontrada!");
                                 break;
                 }
+                return continuar;
         }
 
         public static void sortAlgorithm(int[] randomArray) {
